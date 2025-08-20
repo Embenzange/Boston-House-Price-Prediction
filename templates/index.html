@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='master.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Predictor</h1>
+        <form method="POST" action="/predict">
+            <label for="Unnamed: 0">Unnamed: 0:</label><br>
+            <input type="text" id="Unnamed: 0" name="Unnamed: 0"><br>
+            <label for="crim">crim</label><br>
+            <input type="text" id="crim" name="crim"><br>
+            <label for="zn">zn</label><br>
+            <input type="text" id="zn" name="zn"><br>
+            <label for="indus">indus</label><br>
+            <input type="text" id="indus" name="indus"><br>
+            <label for="chas">chas</label><br>
+            <input type="text" id="chas" name="chas"><br>
+            <label for="nox">nox</label><br>
+            <input type="text" id="nox" name="nox"><br>
+            <label for="rm">rm</label><br>
+            <input type="text" id="rm" name="rm"><br>
+            <label for="age">age</label><br>
+            <input type="text" id="age" name="age"><br>
+            <label for="dis">dis</label><br>
+            <input type="text" id="dis" name="dis"><br>
+            <label for="rad">rad</label><br>
+            <input type="text" id="rad" name="rad"><br>
+            <label for="tax">tax</label><br>
+            <input type="text" id="tax" name="tax"><br>
+            <label for="ptratio">ptratio</label><br>
+            <input type="text" id="ptratio" name="ptratio"><br>
+            <label for="b">b</label><br>
+            <input type="text" id="b" name="b"><br>
+            <label for="lstat">lstat</label><br>
+            <input type="text" id="lstat" name="lstat"><br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <h2>Predicted House Price: ${{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+                    
+</html>
